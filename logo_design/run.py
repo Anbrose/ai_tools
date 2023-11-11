@@ -11,6 +11,11 @@ def parse_args():
                         default=None,
                         help=None)
 
+    parser.add_argument('--input',
+                        type=str,
+                        default=None,
+                        help=None)
+
     args = parser.parse_args()
 
     return args
@@ -27,7 +32,7 @@ def query(payload):
 
 
 image_bytes = query({
-    "inputs": "Astronaut riding a horse",
+    "inputs": args.input,
 })
 
 # You can access the image with PIL.Image for example
